@@ -1,10 +1,10 @@
-# fastapi_docker_postgres_example
-FastApi app with Docker + PostgreSQL study example
+# Hotels management system
+Study application for Technologies of programming and Databases courses in SGU.
 
 Порядок запуска приложения:
 - создать poetry окружение на основе Python ^3.11
 - в терминале прописать poetry install
-- дождаться установки всех библиотек и сборки проекта (`Installing the current project: project (0.1.0)`)
+- дождаться установки всех библиотек и сборки проекта (`Installing the current project: project (0.2.0)`)
 - в терминале прописать docker compose up
 - При успешном запуске будет написано:
   - `INFO:     Application startup complete.`

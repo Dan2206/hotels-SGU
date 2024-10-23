@@ -1,12 +1,17 @@
 from pydantic import BaseModel, Field, ConfigDict
+from datetime import date, datetime
 
 
 class UserSchema(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: int
-    first_name: str
-    last_name: str
-    email: str
-    password: str
-    phone_number: str | None = Field(default=None)
+    surname: str
+    name: str
+    patronymic: str
+    date_of_birth: date
+    type_of_document : str
+    document : str
+    date_of_reg : datetime
+    email : str | None = Field(default=None)
+    phone : str | None = Field(default=None)

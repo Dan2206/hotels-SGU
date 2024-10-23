@@ -8,13 +8,13 @@ from project.schemas.user import UserSchema
 router = APIRouter()
 
 
-@router.get("/all_users", response_model=list[UserSchema])
-async def get_all_users() -> list[UserSchema]:
+@router.get("/all_clients", response_model=list[UserSchema])
+async def get_all_clients() -> list[UserSchema]:
     user_repo = UserRepository()
     database = PostgresDatabase()
 
     async with database.session() as session:
         await user_repo.check_connection(session=session)
-        all_users = await user_repo.get_all_users(session=session)
+        all_clients = await user_repo.get_all_clients(session=session)
 
-    return all_users
+    return all_clients

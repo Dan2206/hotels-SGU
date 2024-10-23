@@ -4,13 +4,13 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 
 from project.schemas.user import UserSchema
-from project.infrastructure.postgres.models import User
+from project.infrastructure.postgres.models import Client
 
 from project.core.config import settings
 
 
 class UserRepository:
-    _collection: Type[User] = User
+    _collection: Type[Client] = Client
 
     async def check_connection(
         self,
@@ -22,11 +22,11 @@ class UserRepository:
 
         return True if result else False
 
-    async def get_all_users(
+    async def get_all_clients(
         self,
         session: AsyncSession,
     ) -> list[UserSchema]:
-        query = f"select * from {settings.POSTGRES_SCHEMA}.users;"
+        query = f"select * from {settings.POSTGRES_SCHEMA}.clients;"
 
         users = await session.execute(text(query))
 

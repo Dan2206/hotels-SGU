@@ -11,5 +11,6 @@ ENV PYTHONPATH /app/src
 WORKDIR /app
 RUN poetry config virtualenvs.create false \
     && poetry install --no-root
-RUN chmod +x ./src/start.sh
+RUN chmod u+x ./src/start.sh
+#ENTRYPOINT ["./src/start.sh"]
 EXPOSE 8000
